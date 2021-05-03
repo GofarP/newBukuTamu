@@ -14,7 +14,6 @@ import java.util.Date;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import koneksi.koneksi;
-import javax.swing.UIManager;
 
 
 
@@ -39,10 +38,7 @@ public class bukutamu extends javax.swing.JFrame {
         txtnama.setText("");
         txtjurusan.setText("");
         txtjurusan.setText("");
-        btnBacaBuku.setVisible(false);
-        btnPinjamBuku.setVisible(false);
-        btnCarireferensi.setVisible(false);
-        btnDuduk.setVisible(false);
+        
     }
     
     
@@ -53,10 +49,7 @@ public class bukutamu extends javax.swing.JFrame {
         txtjurusan.setText("...");
         txtjk.setText("...");
         lblnotif.setForeground(Color.red);
-        btnBacaBuku.setVisible(false);
-        btnPinjamBuku.setVisible(false);
-        btnCarireferensi.setVisible(false);
-        btnDuduk.setVisible(false);
+      
         
     }
     
@@ -107,12 +100,10 @@ public class bukutamu extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         txtjk = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
-        btnDuduk = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         lblnotif = new javax.swing.JLabel();
-        btnPinjamBuku = new javax.swing.JButton();
-        btnBacaBuku = new javax.swing.JButton();
-        btnCarireferensi = new javax.swing.JButton();
+        cbkeperluan = new javax.swing.JComboBox<>();
+        jButton1 = new javax.swing.JButton();
         jPanel4 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
@@ -169,16 +160,6 @@ public class bukutamu extends javax.swing.JFrame {
         jLabel9.setText("Keperluan:");
         jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 242, -1, -1));
 
-        btnDuduk.setBackground(new java.awt.Color(33, 152, 207));
-        btnDuduk.setForeground(new java.awt.Color(255, 255, 255));
-        btnDuduk.setText("Duduk aja");
-        btnDuduk.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnDudukActionPerformed(evt);
-            }
-        });
-        jPanel1.add(btnDuduk, new org.netbeans.lib.awtextra.AbsoluteConstraints(147, 328, 93, -1));
-
         jLabel2.setForeground(new java.awt.Color(0, 0, 255));
         jLabel2.setText("Login?, Klik disini");
         jLabel2.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -192,35 +173,16 @@ public class bukutamu extends javax.swing.JFrame {
         lblnotif.setText("...");
         jPanel1.add(lblnotif, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 50, -1, -1));
 
-        btnPinjamBuku.setBackground(new java.awt.Color(33, 152, 207));
-        btnPinjamBuku.setForeground(new java.awt.Color(255, 255, 255));
-        btnPinjamBuku.setText("Pinjam Buku");
-        btnPinjamBuku.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnPinjamBukuActionPerformed(evt);
-            }
-        });
-        jPanel1.add(btnPinjamBuku, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 274, 99, -1));
+        cbkeperluan.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Pinjam Buku", "Referensi", "Duduk duduk aja" }));
+        jPanel1.add(cbkeperluan, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 270, 130, -1));
 
-        btnBacaBuku.setBackground(new java.awt.Color(33, 152, 207));
-        btnBacaBuku.setForeground(new java.awt.Color(255, 255, 255));
-        btnBacaBuku.setText("Baca Buku");
-        btnBacaBuku.addActionListener(new java.awt.event.ActionListener() {
+        jButton1.setText("Submit");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnBacaBukuActionPerformed(evt);
+                jButton1ActionPerformed(evt);
             }
         });
-        jPanel1.add(btnBacaBuku, new org.netbeans.lib.awtextra.AbsoluteConstraints(147, 274, 93, -1));
-
-        btnCarireferensi.setBackground(new java.awt.Color(33, 152, 207));
-        btnCarireferensi.setForeground(new java.awt.Color(255, 255, 255));
-        btnCarireferensi.setText("cari Referensi");
-        btnCarireferensi.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnCarireferensiActionPerformed(evt);
-            }
-        });
-        jPanel1.add(btnCarireferensi, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 328, -1, -1));
+        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 310, -1, -1));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 135, 440, 440));
 
@@ -311,13 +273,6 @@ public class bukutamu extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jPanel2MouseClicked
 
-    private void btnDudukActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDudukActionPerformed
-        // TODO add your handling code here:
-      
-        submit("duduk aja");
-        
-    }//GEN-LAST:event_btnDudukActionPerformed
-
     private void txtnimKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtnimKeyReleased
         // TODO add your handling code here:
         try 
@@ -334,10 +289,7 @@ public class bukutamu extends javax.swing.JFrame {
                txtjk.setText(rs.getString("jk"));
                txtjurusan.setText(rs.getString("jurusan"));
                lblnotif.setForeground(Color.GREEN);
-               btnBacaBuku.setVisible(true);
-               btnPinjamBuku.setVisible(true);
-               btnCarireferensi.setVisible(true);
-               btnDuduk.setVisible(true);
+              
                lblnotif.setText("Nim Ditemukan");
            }
            
@@ -347,10 +299,7 @@ public class bukutamu extends javax.swing.JFrame {
                txtnama.setText("...");
                txtjurusan.setText("...");
                txtjk.setText("...");
-               btnBacaBuku.setVisible(false);
-               btnPinjamBuku.setVisible(false);
-               btnCarireferensi.setVisible(false);
-               btnDuduk.setVisible(false);
+               
              
            }
            
@@ -368,20 +317,10 @@ public class bukutamu extends javax.swing.JFrame {
       
     }//GEN-LAST:event_txtnimKeyReleased
 
-    private void btnPinjamBukuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPinjamBukuActionPerformed
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        submit("pinjam buku");
-    }//GEN-LAST:event_btnPinjamBukuActionPerformed
-
-    private void btnBacaBukuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBacaBukuActionPerformed
-        // TODO add your handling code here:
-        submit("baca buku");
-    }//GEN-LAST:event_btnBacaBukuActionPerformed
-
-    private void btnCarireferensiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCarireferensiActionPerformed
-        // TODO add your handling code here:
-        submit("cari referensi");
-    }//GEN-LAST:event_btnCarireferensiActionPerformed
+        submit(cbkeperluan.getSelectedItem().toString());
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -419,10 +358,8 @@ public class bukutamu extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnBacaBuku;
-    private javax.swing.JButton btnCarireferensi;
-    private javax.swing.JButton btnDuduk;
-    private javax.swing.JButton btnPinjamBuku;
+    private javax.swing.JComboBox<String> cbkeperluan;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
