@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="KartuPerpus" pageWidth="470" pageHeight="280" whenNoDataType="AllSectionsNoDetail" columnWidth="430" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="dedee87b-1b89-4208-9e46-ca6a009c373d">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="nim" class="java.lang.String"/>
+	<parameter name="nama" class="java.lang.String"/>
+	<parameter name="jurusan" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="113" splitType="Stretch">
+			<staticText>
+				<reportElement x="7" y="5" width="165" height="66" forecolor="#0165CB" uuid="1888cd05-c4c5-4655-9161-6e8faff1d7c4"/>
+				<textElement>
+					<font fontName="Times New Roman" size="25" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Kartu
+Pengunjung]]></text>
+			</staticText>
+			<image>
+				<reportElement x="311" y="0" width="113" height="113" backcolor="#F0EEEE" uuid="b76d55b7-a7e3-4577-8a90-eba093157891"/>
+				<imageExpression><![CDATA["C:\\Users\\LENOVO\\Pictures\\20210428_171428_0000.png"]]></imageExpression>
+			</image>
+			<line>
+				<reportElement x="420" y="0" width="1" height="113" forecolor="#00D9E2" uuid="ef18897c-782a-4767-96ec-95770e16157a"/>
+				<graphicElement>
+					<pen lineWidth="3.0"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="0" y="0" width="1" height="113" forecolor="#00D9E2" uuid="23e02837-24ce-487e-91d9-66dba4799404"/>
+				<graphicElement>
+					<pen lineWidth="3.0"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="0" y="0" width="421" height="1" forecolor="#00D9E2" uuid="631142bd-b596-4deb-9d80-df40690acdf5"/>
+				<graphicElement>
+					<pen lineWidth="3.0"/>
+				</graphicElement>
+			</line>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="118">
+			<textField>
+				<reportElement x="13" y="24" width="165" height="23" forecolor="#0165CB" uuid="3983e9ab-b079-48b5-b4ce-7914500bdfd3"/>
+				<textElement>
+					<font fontName="Times New Roman" size="20" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{nama}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="13" y="54" width="100" height="20" uuid="0fcadfe3-df29-4214-bdad-7c44844d8093"/>
+				<textElement>
+					<font fontName="Times New Roman" size="15"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{nim}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="50" width="208" height="1" uuid="25704581-3d9d-4819-877b-46128db330ef"/>
+				<graphicElement>
+					<pen lineWidth="2.0"/>
+				</graphicElement>
+			</line>
+			<componentElement>
+				<reportElement x="238" y="74" width="167" height="33" uuid="0cc3db34-39f6-448c-8d89-f60b05960f1e"/>
+				<jr:barbecue xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" type="3of9" drawText="false" checksumRequired="false">
+					<jr:codeExpression><![CDATA[$P{nim}]]></jr:codeExpression>
+				</jr:barbecue>
+			</componentElement>
+			<line>
+				<reportElement x="420" y="0" width="1" height="118" forecolor="#00D9E2" uuid="2ab46732-b13a-45c7-8acf-a0438e15c1ff"/>
+				<graphicElement>
+					<pen lineWidth="3.0"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="0" y="0" width="1" height="118" forecolor="#00D9E2" uuid="01cfd2d9-7e2b-4f02-9004-f3f804493b0b"/>
+				<graphicElement>
+					<pen lineWidth="3.0"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="0" y="117" width="421" height="1" forecolor="#00D9E2" uuid="cf07a24f-9428-4fbf-bab0-ab908a664f3a"/>
+				<graphicElement>
+					<pen lineWidth="3.0"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="4" y="92" width="148" height="20" uuid="f4a38444-0cdf-495a-8fba-1339dc1c920a"/>
+				<text><![CDATA[perpustakaan.stti@gmail.com]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+</jasperReport>

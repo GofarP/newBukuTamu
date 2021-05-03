@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="testbarcode" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="6e284709-7e04-4e22-aef8-5e17cac5e1c1">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     mahasiswa.`nim` AS mahasiswa_nim,
+     mahasiswa.`nama` AS mahasiswa_nama,
+     mahasiswa.`notelp` AS mahasiswa_notelp,
+     mahasiswa.`jurusan` AS mahasiswa_jurusan,
+     mahasiswa.`alamat` AS mahasiswa_alamat,
+     mahasiswa.`jk` AS mahasiswa_jk,
+     mahasiswa.`password` AS mahasiswa_password
+FROM
+     `mahasiswa` mahasiswa]]>
+	</queryString>
+	<field name="mahasiswa_nim" class="java.lang.String"/>
+	<field name="mahasiswa_nama" class="java.lang.String"/>
+	<field name="mahasiswa_notelp" class="java.lang.String"/>
+	<field name="mahasiswa_jurusan" class="java.lang.String"/>
+	<field name="mahasiswa_alamat" class="java.lang.String"/>
+	<field name="mahasiswa_jk" class="java.lang.String"/>
+	<field name="mahasiswa_password" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch">
+			<componentElement>
+				<reportElement x="14" y="11" width="133" height="50" uuid="7d4ff75f-7e78-4623-a626-a56dec98ba8a"/>
+				<jr:barbecue xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" type="2of7" drawText="false" checksumRequired="false">
+					<jr:codeExpression><![CDATA[$F{mahasiswa_nim}]]></jr:codeExpression>
+				</jr:barbecue>
+			</componentElement>
+			<textField>
+				<reportElement x="165" y="15" width="100" height="20" uuid="58ba18b4-4cea-4ee5-8caa-61cd7616ef00"/>
+				<textFieldExpression><![CDATA[$F{mahasiswa_nim}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="281" y="15" width="100" height="20" uuid="f2ac8ae6-f4f4-48a7-aa08-d4d2e3531081"/>
+				<textFieldExpression><![CDATA[$F{mahasiswa_nama}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="125" splitType="Stretch"/>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
